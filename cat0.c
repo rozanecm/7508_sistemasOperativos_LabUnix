@@ -2,14 +2,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-ssize_t my_read(int fd, void* buf, size_t count){
-	ssize_t num_of_read_bytes = read(fd, buf, count);
-	while(num_of_read_bytes != 0 || num_of_read_bytes < count){
-		num_of_read_bytes += read(fd, buf + num_of_read_bytes, count - num_of_read_bytes);
-	}
-	return num_of_read_bytes;
-}
-
 void my_write(void* buf, short count){
 	/* On program startup, the integer file descriptors associated with the
 	 * streams stdin, stdout, and stderr are 0, 1, and 2, respectively.
@@ -27,7 +19,9 @@ void my_write(void* buf, short count){
 }
 
 int main(int argc, char* argv[]){
-	/* Pre-condición: solo se pasa un archivo, y el archivo existe y tiene permisos de lectura */
+	/* Pre-condición: solo se pasa un archivo,
+	 * y el archivo existe y tiene permisos de lectura */
+
 	// get file descriptor for file in path
 	int fd = open(argv[1], O_RDONLY); 
 	
