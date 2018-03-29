@@ -10,6 +10,7 @@ int main(int argc, char* argv[]){
      * Syscalls recomendadas: symlink.
      *
      * Pregunta: ¿Qué ocurre si se intenta crear un enlace a un archivo que no existe?
+     * Si ejecutamos el comando ll, se puede ver que el enlace fue creado. 
      * */
     
     /* check for correct number of args */
