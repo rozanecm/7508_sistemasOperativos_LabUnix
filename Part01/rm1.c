@@ -24,9 +24,6 @@ int main(int argc, char* argv[]){
         perror(argv[1]);
         perror(": Is a directory");
 
-        /* set errno */
-        errno = 1;
-
         /* exit with error code */
         _exit(1);
     }

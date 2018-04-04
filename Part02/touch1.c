@@ -19,7 +19,6 @@ int main(int argc, char* argv[]){
      * */
     int fd = open(argv[1], O_CREAT | O_EXCL, 436);
     if(fd == -1 && errno == EEXIST){
-        write(1, "fd = -1...\n", 11);
         /* file already exists */
         fd = open(argv[1], O_RDWR);
         if(fd == -1){

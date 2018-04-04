@@ -5,7 +5,7 @@
 int main(int argc, char* argv[]){
     /* check num of args */
     if(argc != 3){
-        write(1, "Incorrect number of arguments received.", 40);
+        write(1, "Incorrect number of arguments received.\n", 41);
         _exit(1);
     }
 
