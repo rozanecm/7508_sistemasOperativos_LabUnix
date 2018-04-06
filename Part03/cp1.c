@@ -18,7 +18,7 @@ int main(int argc, char* argv[]){
     
     /* open src and dst file */
     int src_fd = open(argv[1], O_RDONLY);
-    int dst_fd = open(argv[2], O_CREAT | O_RDWR, 0666/*436*/);
+    int dst_fd = open(argv[2], O_CREAT | O_RDWR, 436);
 
     /* check errors on file opening */
     if((src_fd == -1) || (dst_fd == -1)){
